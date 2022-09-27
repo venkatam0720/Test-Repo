@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+       maven 'm3.8.4'
+       
+    }
 
     stages {
         stage('checkout'){
@@ -11,6 +15,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+                sh 'mvn --version'
             }
         }
     }
